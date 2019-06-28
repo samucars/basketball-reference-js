@@ -1,22 +1,22 @@
 {
-  "name": "basketball-reference",
+  "name": "basketball-reference-js",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --watch --recursive"
+    "test": "nyc mocha --watch --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samucars/basketball-reference.git"
+    "url": "git+https://github.com/samucars/basketball-reference-js.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/samucars/basketball-reference/issues"
+    "url": "https://github.com/samucars/basketball-reference-js/issues"
   },
-  "homepage": "https://github.com/samucars/basketball-reference#readme",
+  "homepage": "https://github.com/samucars/basketball-reference-js#readme",
   "devDependencies": {
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.1.0",
