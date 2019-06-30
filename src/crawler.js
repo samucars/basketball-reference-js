@@ -9,10 +9,14 @@ class Crawler {
   }
 
   async request(resource, filter) {
-    const response = await this.axios.get(`${this.baseUrl}/${resource}`);
-    const html = response.data;
-    const $ = this.cheerio.load(html);
-    return $(filter).html();
+    try {
+      const response = await this.axios.get(`${this.baseUrl}/${resource}`);
+      const html = response.data;
+      const $ = this.cheerio.load(html);
+      return $(filter).html();
+    } catch (error) {
+      throw error;
+    }
   }
 
   cheerio() {

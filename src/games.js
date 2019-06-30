@@ -17,15 +17,15 @@ class Games extends Crawler {
       }
       const $ = this.cheerio.load(html);
       const games = [];
-      // each games
+      // jquery forced me to this
       $('.game_summary')
         .each((index, element) => {
-          const loser = $(element).find('.loser');
-          const winer = $(element).find('.winner');
-          const loserTeam = $(loser).find('td a[href*="/teams/"]').text();
-          const loserScore = Number($(loser).find('.right').first().text());
-          const winerTeam = $(winer).find('td a').text();
-          const winerScore = Number($(winer).find('.right').first().text());
+          const loserDiv = $(element).find('.loser');
+          const winerDiv = $(element).find('.winner');
+          const loserTeam = $(loserDiv).find('td a[href*="/teams/"]').text();
+          const loserScore = Number($(loserDiv).find('.right').first().text());
+          const winerTeam = $(winerDiv).find('td a').text();
+          const winerScore = Number($(winerDiv).find('.right').first().text());
           const boxScores = $(element).find('.links a:nth-child(1)').attr('href');
           const playByPlay = $(element).find('.links a:nth-child(2)').attr('href');
           const shotChart = $(element).find('.links a:nth-child(3)').attr('href');
