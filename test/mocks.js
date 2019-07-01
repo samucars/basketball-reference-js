@@ -1,4 +1,5 @@
 const games = `
+<div class="game_summary expanded nohover">
 <table class="teams">
 <tbody>
   <tr class="loser">
@@ -48,7 +49,8 @@ const games = `
     <td class="right">14</td>
   </tr>
 </tbody>
-</table>`;
+</table>
+</div>`;
 
 module.exports = {
   games,

@@ -1,5 +1,5 @@
-const Games = require('./src/games');
+const games = require('./src/games');
 
 module.exports = {
-  games: new Games(),
+  games,
 };

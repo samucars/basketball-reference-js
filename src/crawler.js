@@ -1,27 +1,14 @@
-const Axios = require('axios');
-const Cheerio = require('cheerio');
+const axios = require('axios');
+const cheerio = require('cheerio');
 
-class Crawler {
-  constructor(axios = Axios, cheerio = Cheerio) {
-    this.axios = axios;
-    this.cheerio = cheerio;
-    this.baseUrl = 'https://www.basketball-reference.com';
-  }
+const baseUrl = 'https://www.basketball-reference.com';
 
-  async request(resource, filter) {
-    try {
-      const response = await this.axios.get(`${this.baseUrl}/${resource}`);
-      const html = response.data;
-      const $ = this.cheerio.load(html);
-      return $(filter).html();
-    } catch (error) {
-      throw error;
-    }
-  }
+const request = async (resource, filter) => {
+  const response = await axios.get(`${baseUrl}/${resource}`);
+  const $ = cheerio.load(response.data);
+  return $(filter).html();
+};
 
-  cheerio() {
-    return this.cheerio;
-  }
-}
-
-module.exports = Crawler;
+module.exports = {
+  request
+};
