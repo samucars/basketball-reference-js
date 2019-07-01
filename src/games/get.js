@@ -11,7 +11,6 @@ module.exports = async (date) => {
   const resource = getUrl(date);
   const filter = '.game_summaries';
   const html = await Crawler.request(resource, filter);
-  console.log(html);
   if (!html) {
     return [];
   }

@@ -6,7 +6,7 @@ const Games = require('../src/games');
 
 const mocks = require('./mocks');
 
-describe('A class that contains information about the game', () => {
+describe('A function that contains information about the game', () => {
   let stubRequest;
   beforeEach(() => {
     stubRequest = stub(Crawler, 'request');
