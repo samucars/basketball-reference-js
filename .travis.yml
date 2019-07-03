@@ -1,8 +1,6 @@
 language: node_js
 node_js:
   - "10.16.0"
-before_install:
-  - npm i -g makeshift && makeshift -s @samucars -r https://registry.npmjs.org
 cache:
   directories:
     - "node_modules"
