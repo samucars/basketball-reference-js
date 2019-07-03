@@ -11,5 +11,6 @@ deploy:
   email: samuca_rs96@hotmail.com
   api_key: $NPM_TOKEN
   on:
+    repo: samucars/basketball-reference-js
     tags: true
     all_branches: true
