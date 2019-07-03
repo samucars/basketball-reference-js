@@ -1,6 +1,6 @@
 {
   "name": "basketball-reference-js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/samucars/basketball-reference-js.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nba",
+    "node",
+    "basketaball",
+    "reference"
+  ],
+  "author": "@samucars",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/samucars/basketball-reference-js/issues"
@@ -33,5 +38,8 @@
   "dependencies": {
     "axios": "^0.19.0",
     "cheerio": "^1.0.0-rc.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }

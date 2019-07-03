@@ -6,3 +6,9 @@ cache:
     - "node_modules"
 script:
   - "npm run test:coverage:report"
+deploy:
+  provider: npm
+  email: samuca_rs96@hotmail.com
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
