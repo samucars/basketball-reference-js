@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/samucars/basketball-reference-js/compare/v0.1.1...v0.1.2) (2019-07-03)
+
+
+### Bug Fixes
+
+* adjustment on file .travis ([99bf540](https://github.com/samucars/basketball-reference-js/commit/99bf540))
+* adjustment on file .travis ([6f39634](https://github.com/samucars/basketball-reference-js/commit/6f39634))
+* adjustment on file .travis ([70be046](https://github.com/samucars/basketball-reference-js/commit/70be046))
+
+
+
 ### [0.1.1](https://github.com/samucars/basketball-reference-js/compare/v0.1.0...v0.1.1) (2019-07-03)
 
 
