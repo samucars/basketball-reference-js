@@ -13,7 +13,3 @@ deploy:
   on:
     repo: samucars/basketball-reference-js
     tags: true
-branches:
-  only:
-    - master
-    - /v\d+\.\d+[a-z]/
