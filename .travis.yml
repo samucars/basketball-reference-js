@@ -16,4 +16,3 @@ deploy:
 branches:
   only:
     - master
-    - /v\d+\.\d+[a-z]/
