@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha --watch --recursive"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
