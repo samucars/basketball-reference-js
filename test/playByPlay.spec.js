@@ -16,6 +16,6 @@ describe('A function that contains play-by-play of the game', () => {
   });
   it('should', async () => {
     stubRequest.callsFake(() => Promise.resolve(mocks.playByPlay));
-    await Games.playByPlay('/boxscores/pbp/201812130HOU.html');
-  }).timeout(8000);
+    const playByPlay = await Games.playByPlay('/boxscores/pbp/201812130HOU.html');
+  });
 });
