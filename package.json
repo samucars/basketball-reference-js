@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "release": "standard-version",
-    "test": "mocha",
-    "test:coverage": "nyc npm test",
-    "test:coverage:report": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "test": "nyc mocha",
+    "test:report": "npm test && nyc report --reporter=text-lcov | coveralls",
     "test:watch": "mocha --watch --recursive"
   },
   "repository": {
