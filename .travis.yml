@@ -12,4 +12,3 @@ deploy:
   api_key: $NPM_TOKEN
   on:
     repo: samucars/basketball-reference-js
-    tags: true
