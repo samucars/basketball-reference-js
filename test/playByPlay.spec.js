@@ -52,7 +52,7 @@ describe('A function that contains play-by-play of the game', () => {
       assert.equal(thirdQuarter.plays[0].time, '11:43.0');
       assert.equal(thirdQuarter.plays[0].team, 'Houston');
       assert.equal(thirdQuarter.plays[0].play, 'J. Harden makes 2-pt layup from 3 ft');
-      assert.equal(thirdQuarter.plays[0].scoring, 0);
+      assert.equal(thirdQuarter.plays[0].scoring, 2);
 
       assert.equal(thirdQuarter.plays[1].time, '11:21.0');
       assert.equal(thirdQuarter.plays[1].team, 'LA Lakers');

@@ -7,6 +7,7 @@ const quarters = ['q1', 'q2', 'q3', 'q4'];
 const normalizeQuarter = quarter => Number(quarter.replace('q', ''));
 const normalizePlay = play => play.replace(/(\r\n|\n|\r)/gm, '');
 const getTeamPositionTable = element => (element.find('td:nth-child(2)').text().trim() !== '' ? 2 : 6);
+const getScorePositionTable = teamPosition => (teamPosition === 2 ? 3 : 5);
 
 module.exports = async (url) => {
   const html = await Crawler.request(url, '.table_outer_container');
@@ -40,7 +41,7 @@ module.exports = async (url) => {
       team: teamPositionTable === 2 ? firstTeam : secondTeam,
       play: normalizePlay($(element).find(`td:nth-child(${teamPositionTable})`).text().trim()),
       scoring: Number($(element)
-        .find('.bbr-play-score:nth-child(3)').text().trim()
+        .find(`.bbr-play-score:nth-child(${getScorePositionTable(teamPositionTable)})`).text().trim()
         .replace('+', '')),
     };
     return playByPlay[quarterIndex].plays.push(play);
