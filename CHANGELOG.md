@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/samucars/basketball-reference-js/compare/v0.2.2...v0.2.3) (2019-07-10)
+
+
+### Bug Fixes
+
+* **playByPlay:** bug at the time of the listing of the scores ([d787c4a](https://github.com/samucars/basketball-reference-js/commit/d787c4a))
+
+
+
 ### [0.2.2](https://github.com/samucars/basketball-reference-js/compare/v0.2.1...v0.2.2) (2019-07-08)
 
 
