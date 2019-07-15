@@ -23,7 +23,7 @@ module.exports = async (date) => {
       const winerDiv = $(element).find('.winner');
       const loserTeam = $(loserDiv).find('td a[href*="/teams/"]').text();
       const loserScore = Number($(loserDiv).find('.right').first().text());
-      const winerTeam = $(winerDiv).find('td a').text();
+      const winerTeam = $(winerDiv).find('td a').text().replace('Final', '');
       const winerScore = Number($(winerDiv).find('.right').first().text());
       const boxScores = $(element).find('.links a:nth-child(1)').attr('href');
       const playByPlay = $(element).find('.links a:nth-child(2)').attr('href');
