@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/samucars/basketball-reference-js/compare/v0.2.3...v0.2.4) (2019-07-15)
+
+
+### Bug Fixes
+
+* removing the string Final in the team name ([ad186e0](https://github.com/samucars/basketball-reference-js/commit/ad186e0))
+
+
+
 ### [0.2.3](https://github.com/samucars/basketball-reference-js/compare/v0.2.2...v0.2.3) (2019-07-10)
 
 
