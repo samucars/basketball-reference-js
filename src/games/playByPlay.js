@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 
 const Crawler = require('../crawler');
 
-const quarters = ['q1', 'q2', 'q3', 'q4'];
+const quartersTable = ['q1', 'q2', 'q3', 'q4'];
 
 const normalizeQuarter = quarter => Number(quarter.replace('q', ''));
 const normalizePlay = play => play.replace(/(\r\n|\n|\r)/gm, '');
@@ -12,16 +12,16 @@ const getScorePositionTable = teamPosition => (teamPosition === 2 ? 3 : 5);
 module.exports = async (url) => {
   const html = await Crawler.request(url, '.table_outer_container');
   const $ = cheerio.load(html);
-  const playByPlay = [];
+  const quarters = [];
   let firstTeam = null;
   let secondTeam = null;
   let quarterIndex = -1;
   $('table tr').each((index, element) => {
     const quarter = $(element).attr('id');
-    const isQuarter = quarters.indexOf(quarter) >= 0;
+    const isQuarter = quartersTable.indexOf(quarter) >= 0;
     if (isQuarter) {
       quarterIndex += 1;
-      return playByPlay.push({ quarter: normalizeQuarter(quarter), plays: [] });
+      return quarters.push({ quarter: normalizeQuarter(quarter), plays: [] });
     }
 
     const tableHead = $(element).attr('class');
@@ -44,7 +44,10 @@ module.exports = async (url) => {
         .find(`.bbr-play-score:nth-child(${getScorePositionTable(teamPositionTable)})`).text().trim()
         .replace('+', '')),
     };
-    return playByPlay[quarterIndex].plays.push(play);
+
+    return quarters[quarterIndex].plays.push(play);
   });
-  return playByPlay;
+
+  const link = url.split('/')[3].replace('.html', '');
+  return { link, quarters };
 };

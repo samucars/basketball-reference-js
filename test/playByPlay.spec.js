@@ -20,8 +20,9 @@ describe('A function that contains play-by-play of the game', () => {
       stubRequest.callsFake(() => Promise.resolve(mocks.playByPlay));
       playByPlay = await Games.playByPlay('/boxscores/pbp/201812130HOU.html');
     });
+    it('should return link the game', () => assert.equal(playByPlay.link, '201812130HOU'));
     it('should return the data of the first quarter', () => {
-      const [firstQuarter] = playByPlay;
+      const [firstQuarter] = playByPlay.quarters;
       assert.equal(firstQuarter.quarter, 1);
       assert.equal(firstQuarter.plays[0].time, '11:35.0');
       assert.equal(firstQuarter.plays[0].team, 'LA Lakers');
@@ -34,7 +35,7 @@ describe('A function that contains play-by-play of the game', () => {
       assert.equal(firstQuarter.plays[1].scoring, 0);
     });
     it('should return the data of the second quarter', () => {
-      const secondQuarter = playByPlay[1];
+      const secondQuarter = playByPlay.quarters[1];
       assert.equal(secondQuarter.quarter, 2);
       assert.equal(secondQuarter.plays[0].time, '11:44.0');
       assert.equal(secondQuarter.plays[0].team, 'Houston');
@@ -47,7 +48,7 @@ describe('A function that contains play-by-play of the game', () => {
       assert.equal(secondQuarter.plays[1].scoring, 0);
     });
     it('should return the data of the third quarter', () => {
-      const thirdQuarter = playByPlay[2];
+      const thirdQuarter = playByPlay.quarters[2];
       assert.equal(thirdQuarter.quarter, 3);
       assert.equal(thirdQuarter.plays[0].time, '11:43.0');
       assert.equal(thirdQuarter.plays[0].team, 'Houston');
@@ -60,7 +61,7 @@ describe('A function that contains play-by-play of the game', () => {
       assert.equal(thirdQuarter.plays[1].scoring, 3);
     });
     it('should return the data of the fourth quarter', () => {
-      const fourthQuarter = playByPlay[3];
+      const fourthQuarter = playByPlay.quarters[3];
       assert.equal(fourthQuarter.quarter, 4);
       assert.equal(fourthQuarter.plays[0].time, '11:48.0');
       assert.equal(fourthQuarter.plays[0].team, 'LA Lakers');
