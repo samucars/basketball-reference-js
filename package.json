@@ -7,7 +7,9 @@
     "release": "standard-version",
     "test": "nyc mocha",
     "test:report": "npm test && nyc report --reporter=text-lcov | coveralls",
-    "test:watch": "mocha --watch --recursive"
+    "test:watch": "mocha --watch --recursive",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -38,9 +40,11 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "snyk": "^1.316.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "snyk": true
 }
